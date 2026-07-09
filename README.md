@@ -18,6 +18,15 @@ It is not the full product source, does not include model binaries, and does
 not include private coordination history, local paths, customer data, personal
 memory content, API-key handling, or unreleased product surfaces.
 
+## Architecture at a glance
+
+![Vaani architecture](assets/architecture.svg)
+
+There is also a static HTML showcase page at
+[docs/architecture.html](docs/architecture.html) for local viewing or GitHub
+Pages use. Once GitHub Pages is active, the rendered page is:
+[https://cmintr.github.io/vaani/](https://cmintr.github.io/vaani/).
+
 ## Device and model snapshot
 
 | Area | Value |

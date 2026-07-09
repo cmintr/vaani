@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaani architecture</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: #111827;
+      --text: #f5f7fb;
+      --muted: #aab6c8;
+      --accent: #7b5bff;
+      --line: rgba(255, 255, 255, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(123, 91, 255, 0.22), transparent 34%),
+        radial-gradient(circle at 86% 14%, rgba(51, 214, 255, 0.14), transparent 30%),
+        linear-gradient(135deg, #0b0d12 0%, #12182a 55%, #181021 100%);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 52px 0 64px;
+    }
+
+    .hero { display: grid; gap: 14px; margin-bottom: 26px; }
+
+    .eyebrow {
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid rgba(123, 91, 255, 0.55);
+      border-radius: 999px;
+      color: #cfc8ff;
+      background: rgba(123, 91, 255, 0.13);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      max-width: 850px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .diagram {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.045);
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.35);
+    }
+
+    .diagram img { display: block; width: 100%; height: auto; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      min-height: 132px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(150deg, rgba(27, 32, 48, 0.9), rgba(17, 24, 39, 0.84));
+    }
+
+    .card strong { display: block; margin-bottom: 8px; font-size: 15px; }
+    .card span { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    footer { margin-top: 24px; color: #8d9aaf; font-size: 13px; }
+
+    @media (max-width: 860px) {
+      main { width: min(100% - 28px, 1180px); padding-top: 32px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Portfolio extract</div>
+      <h1>Local-first Android AI, measured on ARM64.</h1>
+      <p class="lead">
+        Vaani is a pre-release Android AI companion. This page summarizes the
+        public architecture slice: local model runtime, hybrid memory, voice
+        harnessing, cloud-tool deferral, and evidence gates.
+      </p>
+    </section>
+
+    <section class="diagram" aria-label="Vaani architecture diagram">
+      <img src="../assets/architecture.svg" alt="Vaani architecture diagram">
+    </section>
+
+    <section class="cards" aria-label="Evidence highlights">
+      <div class="card">
+        <strong>Inference</strong>
+        <span>Gemma 4 E4B LiteRT-LM container, 3.41 GiB, p50 decode 14.8 tok/s.</span>
+      </div>
+      <div class="card">
+        <strong>Voice QA</strong>
+        <span>Reminder command harness validates tool invocation and DB side effect.</span>
+      </div>
+      <div class="card">
+        <strong>Memory</strong>
+        <span>sqlite-vec, EmbeddingGemma 300M 768D, FTS5/BM25, RRF k=60.</span>
+      </div>
+      <div class="card">
+        <strong>Engineering control</strong>
+        <span>Specs, bug files, release scans and evidence artifacts kept as gates.</span>
+      </div>
+    </section>
+
+    <footer>
+      Pre-release portfolio extract. Representative architecture and measured
+      values only; not the full private product source.
+    </footer>
+  </main>
+</body>
+</html>
