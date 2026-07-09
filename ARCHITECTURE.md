@@ -4,7 +4,7 @@ Vaani is a pre-release local-first Android AI companion. The private app is a
 Flutter/Kotlin/Rust Android project with on-device inference, voice-command
 tooling and hybrid memory.
 
-Visual overview: [assets/architecture.svg](assets/architecture.svg) and
+Visual overview: [docs/assets/architecture.svg](docs/assets/architecture.svg) and
 [docs/architecture.html](docs/architecture.html).
 
 ## High-level flow

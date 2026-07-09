@@ -20,7 +20,7 @@ memory content, API-key handling, or unreleased product surfaces.
 
 ## Architecture at a glance
 
-![Vaani architecture](assets/architecture.svg)
+![Vaani architecture](docs/assets/architecture.svg)
 
 There is also a static HTML showcase page at
 [docs/architecture.html](docs/architecture.html) for local viewing or GitHub
