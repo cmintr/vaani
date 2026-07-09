@@ -1,0 +1,29 @@
+# Local/editor noise
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Large/private artifacts are intentionally excluded
+*.litertlm
+*.tflite
+*.bin
+*.onnx
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.wav
+*.mp3
+*.m4a
+*.mp4
+*.zip
+
+# Secrets/config
+.env
+.env.*
+secrets.*
+*key*
+*token*
+
